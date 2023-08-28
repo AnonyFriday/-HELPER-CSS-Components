@@ -1,0 +1,55 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  background-color: gray;
+  font-size: 0px;
+  text-align: center;
+}
+
+.navbar > *:link,
+.navbar > *:visited {
+  display: inline-block;
+  text-align: center;
+  color: aliceblue;
+  background-color: gray;
+  text-decoration: none;
+
+  line-height: 50px;
+  padding: 0 20px;
+  font-size: 30px;
+  border-right: 5px solid yellow;
+}
+
+.navbar > *:focus {
+}
+
+.navbar > *:hover {
+}
+
+.navbar > *:active {
+  background-color: rgba(232, 232, 232, 0.883);
+  color: antiquewhite;
+}
+
+.main-content {
+  background-color: aliceblue;
+  height: 100vh;
+}
+
+.main-content * {
+  margin-bottom: 20px;
+}
+
+.main-content h1 {
+  font-size: 22px;
+}
+
+.main-content p {
+  font-size: 18px;
+}

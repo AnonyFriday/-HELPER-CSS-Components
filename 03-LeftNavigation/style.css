@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(0, 128, 0, 0.09);
+}
+
+body {
+  font-size: 18px;
+  padding: 20px;
+}
+
+main {
+  display: flow-root;
+}
+
+.navbar {
+  float: left;
+  width: 25%;
+}
+
+.navbar > a:visited,
+.navbar > a:link {
+  display: block;
+  color: aliceblue;
+  padding-left: 20px;
+  line-height: 50px;
+  text-decoration: none;
+}
+
+.navbar > a:focus {
+}
+
+.navbar > a:hover {
+}
+
+.nav > a:active {
+}
+
+.main-content {
+  float: right;
+  width: 70%;
+  height: max-content;
+}
+
+.main-content * {
+  margin-bottom: 20px;
+}

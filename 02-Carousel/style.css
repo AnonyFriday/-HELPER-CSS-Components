@@ -1,0 +1,143 @@
+/* Reset CSS */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto:wght@300;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* background-color: rgba(0, 128, 0, 0.1); */
+}
+
+:root {
+  --color-green: #047857;
+  --color-white: #f0fdf4;
+  --color-white-light: #f0fdf4c9;
+  --color-black-light: rgba(2, 6, 23, 0.1);
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  width: 80vw;
+  margin: 100px auto;
+}
+
+/* Carousel */
+.carousel {
+  display: flex;
+  position: relative;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 25px 25px 60px;
+  height: 180px;
+
+  background-color: var(--color-green);
+  border-radius: 5px;
+
+  gap: 60px;
+  box-shadow: 0 10px 40px 5px var(--color-black-light);
+}
+
+.carousel__img {
+  width: 150px;
+  height: 150px;
+  flex: 0 1 150px;
+  transform: scale(1.5);
+
+  border-radius: 10px;
+  box-shadow: 0 0px 50px 1px var(--color-black-light);
+}
+
+.carousel__testimonial {
+  flex: 1 1 auto;
+  height: calc(180px - 25px - 25px);
+  /* margin-left: 65px; */
+}
+
+.carousel__dots {
+  position: absolute;
+
+  bottom: -15%;
+  left: 50%;
+}
+
+/* Testimonial */
+.testimonial {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.testimonial__text {
+  flex: 1 1 auto;
+  font-size: 16px;
+  line-height: 1.3;
+  letter-spacing: 1.1px;
+
+  color: var(--color-white);
+}
+
+.testimonial__name {
+  font-size: 12px;
+  color: var(--color-white-light);
+}
+
+.testimonial__job {
+  font-size: 12px;
+  color: var(--color-white-light);
+}
+
+/* Btns */
+.btn {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--color-white);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 5px 40px 5px var(--color-black-light);
+}
+
+.btn__icon {
+  stroke: var(--color-green);
+  width: 20px;
+  stroke-width: 2;
+}
+
+.btn--left {
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.btn--right {
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+/* Dots */
+.dots {
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-white);
+
+  border: 1px solid var(--color-green);
+  border-radius: 50%;
+}
+
+.dot--active {
+  background-color: var(--color-green);
+}

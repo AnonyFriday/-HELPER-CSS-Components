@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="carousel">
+        <!-- Image -->
+        <img src="maria.jpg" alt="maria imae of happy shit" class="carousel__img" />
+
+        <!-- Text content -->
+        <blockquote class="carousel__testimonial testimonial">
+          <p class="testimonial__text">
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut voluptatibus laborum illo harum dolorum nobis
+            obcaecati expedita nulla vero cum?"
+          </p>
+          <p class="testimonial__name">Maria de Almeida</p>
+          <p class="testimonial__job">Senior Product Manager at EDP Commercial</p>
+        </blockquote>
+
+        <!-- Buttons -->
+        <button class="btn btn--left">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="btn__icon"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+          </svg>
+        </button>
+        <button class="btn btn--right">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="btn__icon"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+          </svg>
+        </button>
+
+        <!-- Dots -->
+        <div class="carousel__dots dots">
+          <span class="dot dot--active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
