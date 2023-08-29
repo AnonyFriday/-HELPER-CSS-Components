@@ -1,0 +1,98 @@
+/* General */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@300;500;700&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(0, 128, 0, 0.2);
+}
+
+:root {
+  --color-green: #047857;
+  --color-white: #f0fdf4;
+  --color-black: #000000;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1;
+  padding: 80px;
+}
+
+/* Reusable Components */
+a:link,
+a:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--color-black);
+  text-align: center;
+}
+
+a:focus,
+a:hover,
+a:active {
+  background-color: var(--color-green);
+  color: var(--color-white);
+}
+
+.btn {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid var(--color-green);
+}
+
+.btn__icon {
+  width: 20px;
+  height: 20px;
+  stroke: var(--color-green);
+  stroke-width: 2;
+}
+
+.btn__left {
+}
+
+.btn__right {
+  order: 1;
+}
+
+.btn:hover {
+  background-color: var(--color-green);
+}
+.btn:hover .btn__icon {
+  stroke: var(--color-white);
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  width: max-content;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.pagination__pages {
+  display: flex;
+  gap: 5px;
+}
+
+.pages {
+}
+.pages__el {
+  font-size: 14px;
+  font-weight: 600;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  border-radius: 50%;
+}
+.pages__more {
+  align-self: center;
+  font-size: 20px;
+}
