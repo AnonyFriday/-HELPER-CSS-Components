@@ -1,0 +1,239 @@
+/***
+    The new CSS reset - version 1.9 (last updated 19.6.2023)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+    - The "html" element is excluded, otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
+*/
+
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@300;500;700&family=Rubik:wght@400;600;700&display=swap");
+
+*:where(
+    :not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)
+  ) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a,
+button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input,
+textarea {
+  -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+
+/* preformatted text - use only for this feature */
+:where(pre) {
+  all: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+  color: unset;
+}
+
+/* remove default dot (•) sign */
+::marker {
+  content: initial;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable="false"])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+  -webkit-user-drag: element;
+}
+
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+  all: revert;
+}
+
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+
+/* 
+==========================
+General Rules
+==========================
+*/
+
+*,
+*::after,
+*::before {
+  /* background-color: rgba(0, 128, 0, 0.3); */
+}
+
+:root {
+  --color-white: #fafafa;
+  --color-black: #09090b;
+  --color-black-light: rgba(9, 9, 11, 0.6);
+  --color-white-light: rgba(250, 250, 250, 0.2);
+
+  --color-orange: #d97706;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  color: var(--color-white);
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 24px;
+}
+/* 
+==========================
+Header
+==========================
+*/
+
+.header {
+  background: linear-gradient(
+      var(--color-black-light),
+      var(--color-black-light)
+    ),
+    url("./hero.jpg") top center / cover no-repeat;
+  height: 100vh;
+  position: relative;
+}
+
+.header__topnav {
+  padding-top: 20px;
+}
+
+.topnav {
+  display: flex;
+  justify-content: space-between;
+
+  font-weight: 600;
+}
+
+.topnav__logo {
+}
+
+.topnav__navs {
+}
+
+.header__headline-container {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+
+  transform: translate(0, -50%);
+}
+
+.header__headline {
+  width: 60%;
+}
+
+.headline {
+}
+
+.headline__header {
+  font-size: 44px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.headline__text {
+  font-size: 14px;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 10px;
+
+  background-color: #d97706;
+}
+
+/* 
+==========================
+Body
+==========================
+*/
+
+.section {
+  color: var(--color-black);
+  margin-top: 24px;
+}
+
+.section__header {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.section__text {
+  margin-top: 24px;
+  line-height: 1.8;
+  font-size: 18px;
+}
