@@ -1,0 +1,216 @@
+/***
+    The new CSS reset - version 1.9 (last updated 19.6.2023)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+    - The "html" element is excluded, otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
+ */
+
+@charset "utf-8";
+
+*:where(
+    :not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)
+  ) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a,
+button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input,
+textarea {
+  -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+
+/* preformatted text - use only for this feature */
+:where(pre) {
+  all: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+  color: unset;
+}
+
+/* remove default dot (•) sign */
+::marker {
+  content: initial;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable="false"])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+  -webkit-user-drag: element;
+}
+
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+  all: revert;
+}
+
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+
+/* 
+============================================
+General
+============================================
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@300;500;700&family=Rubik:wght@400;600;700&display=swap");
+
+*,
+*::after,
+*::before {
+  background-color: rgba(0, 128, 0, 0.3);
+}
+
+:root {
+  --color-white: #f8fafc;
+  --color-black: #020617;
+  --color-purple: #6d28d9;
+  --color-red: #f43f5e;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  display: grid;
+  min-height: 100vh;
+  grid-template: 80px 1fr 80px / 50px 200px 1fr 150px;
+}
+
+.container {
+  padding: 0 20px;
+}
+
+/* Atomic CSS */
+.padding-top-1 {
+  padding-top: 1rem;
+}
+
+.padding-bottom-1 {
+  padding-bottom: 1rem;
+}
+
+.padding-left-1 {
+  padding-left: 1rem;
+}
+
+.padding-right-1 {
+  padding-right: 1rem;
+}
+
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--color-white);
+  padding: 12px 24px;
+}
+
+.btn:last-child {
+  margin-left: auto;
+}
+
+/* 
+============================================
+Page's Components
+============================================
+*/
+
+.page__sidenav {
+  grid-area: 1 / 1 / -1 / 2;
+}
+
+.page__header {
+  grid-area: 1 / 2 / span 1 / -1;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 0;
+}
+
+.page__mailbox {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.page__main-view {
+  grid-area: 2 / 3;
+}
+
+.page__aside {
+  grid-area: 2 / 4 / span 1 / span 1;
+}
+
+.page__footer {
+  grid-area: 3 / 2 / -1 / -1;
+  display: flex;
+  align-items: center;
+}
